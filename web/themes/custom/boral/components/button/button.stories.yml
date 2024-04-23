@@ -1,0 +1,15 @@
+title: Button
+argTypes:
+linkText:
+  control: text
+stories:
+  - name: Primary Button
+    args:
+      linkText: Welcome
+      buttonType: primary
+      link: #
+  - name: Secondary Button
+    args:
+      linkText: Welcome
+      buttonType: secondary
+      link: #
