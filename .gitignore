@@ -41,6 +41,3 @@ node_modules
 *.tmp
 
 .DS_Store
-
-!web/sites/default/files/gc/*
-!web/sites/default/files/migration/news-export.csv

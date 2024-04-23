@@ -1,0 +1,29 @@
+name: Boral theme
+description: Boral Theme
+core: 10.x
+core_version_requirement: ^10
+type: theme
+base theme: stable9
+logo: assets/images/logos/logo.svg
+ckeditor_stylesheets:
+  - build/ckeditor-styles.css
+libraries:
+  - cer/global-fonts
+  - cer/global-css
+  - cer/global-js
+regions:
+  mobile: Mobile navigation
+  header: Header
+  navigation: Navigation
+  help: Help
+  sidebar_first: Sidebar
+  content: Content
+  content_below: Content below
+  above_footer: Above footer
+  footer_logo: Footer logo
+  footer_links: Footer links
+  footer_menu: Footer menu
+  hidden: Hidden blocks
+
+settings:
+  demo_mode: 0
