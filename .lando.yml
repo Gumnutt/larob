@@ -1,0 +1,4 @@
+name: boral
+recipe: drupal10
+config:
+  webroot: web
