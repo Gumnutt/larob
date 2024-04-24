@@ -1,17 +1,17 @@
-import Button from './button.twig'
-import './button.css'
+import Button from "./button.twig"
+import "./button.css"
 
 export default {
-  title: 'Components/Button',
-  tags: ['autodocs'],
+  title: "components/button",
+  tags: ["autodocs"],
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
 }
 
 export const Default = {
-  linkText: 'My button',
-  link: '#',
-  buttonType: 'mega',
+  linkText: "My button",
+  link: "#",
+  buttonType: "mega",
 }

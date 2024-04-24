@@ -1,7 +1,4 @@
 /** @type { import('@storybook/html').Preview } */
-
-// import global css here
-
 const preview = {
   parameters: {
     controls: {
@@ -11,6 +8,6 @@ const preview = {
       },
     },
   },
-}
+};
 
-export default preview
+export default preview;
