@@ -1,0 +1,27 @@
+{
+  "name": "storybook-druppy",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.3.3",
+    "@storybook/addon-essentials": "^8.0.9",
+    "@storybook/addon-interactions": "^8.0.9",
+    "@storybook/addon-links": "^8.0.9",
+    "@storybook/blocks": "^8.0.9",
+    "@storybook/html": "^8.0.9",
+    "@storybook/html-vite": "^8.0.9",
+    "@storybook/test": "^8.0.9",
+    "storybook": "^8.0.9",
+    "twig": "^1.17.1",
+    "vite": "^5.2.0",
+    "vite-plugin-twig-drupal": "^1.2.1"
+  }
+}

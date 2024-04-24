@@ -24,6 +24,10 @@ regions:
   footer_links: Footer links
   footer_menu: Footer menu
   hidden: Hidden blocks
+components:
+  namespaces:
+    storybook:
+      - ./components
 
 settings:
   demo_mode: 0
