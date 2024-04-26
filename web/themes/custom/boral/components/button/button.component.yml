@@ -1,4 +1,12 @@
 name: Button
+libraryOverrides:
+  vite: true
+  css:
+    component:
+      button.pcss.css: {}
+  js:
+    button.ts: {}
+
 props:
 type: object
 required:
