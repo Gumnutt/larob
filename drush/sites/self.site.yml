@@ -7,3 +7,10 @@
 # - Aliases for active environments (including any custom additions) will be preserved.
 # - Aliases for deleted or inactive environments will be deleted.
 # - All other information will be deleted.
+main:
+  options:
+    platformsh-cli-auto-remove: true
+  root: /app/web
+  user: 2x2ymbfwrv3yi-main-bvxea6i--app
+  host: ssh.au.platform.sh
+  uri: 'https://main-bvxea6i-2x2ymbfwrv3yi.au.platformsh.site/'
