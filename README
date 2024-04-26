@@ -1,0 +1,13 @@
+## Storybook setup:
+
+- at the root .storybook folder contains the config for stories.
+- initial install followed:
+  https://git.drupalcode.org/project/cl_server/-/blob/2.x/docs/storybook.md?ref_type=heads
+- rather than yarn add, npm install was used to install the dependencies.
+- "npx storybook@latest init -t server"
+- "npm install --save-dev @lullabot/storybook-drupal-addon"
+- "npm run storybook"
+
+- currently not working for SDC, looks like version issues with the
+  storybook-drupal-addon.
+- still works with example stories in the themestories folder.
