@@ -30,6 +30,8 @@ $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/lando.services.ym
 
 $settings['file_temp_path'] = '/app/web/sites/default/files/tmp';
 
+$settings['tracer_plugin'] = 'stopwatch_tracer';
+
 
 $settings['twig_debug'] = TRUE;
 $settings['hot_module_replacement'] = TRUE;

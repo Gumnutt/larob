@@ -1,4 +1,4 @@
-uuid: f3df4392-ba55-4cb5-82f4-1195920dda05
+uuid: 2dc0c82c-428b-4fcc-8ab4-30fe9c3c13a3
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - boral@boral.com.au
+  - admin@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

@@ -2,3 +2,9 @@ name: boral
 recipe: drupal10
 config:
   webroot: web
+
+tooling:
+  drush:
+    service: appserver
+    env:
+      DRUSH_OPTIONS_URI: "https://boral.lndo.site"

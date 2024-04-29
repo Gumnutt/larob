@@ -1,9 +1,9 @@
 _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
-uuid: af574aaa-ab92-4cd4-98e7-2b3a1882a268
-name: Boral
-mail: boral@boral.com.au
+uuid: 45fca120-8bce-4110-81b3-a9db0a63a86b
+name: Drupal
+mail: ''
 slogan: ''
 page:
   403: ''

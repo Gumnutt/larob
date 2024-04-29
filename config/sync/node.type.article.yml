@@ -1,7 +1,12 @@
-uuid: 3645c241-71d4-47e5-901a-768465f356b0
+uuid: 82a54fc3-a079-49b6-9a25-2a46b8ece012
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - type_tray
+third_party_settings:
+  type_tray:
+    existing_nodes_link_text: 'View existing <em class="placeholder">Article</em> content'
 _core:
   default_config_hash: AeW1SEDgb1OTQACAWGhzvMknMYAJlcZu0jljfeU3oso
 name: Article

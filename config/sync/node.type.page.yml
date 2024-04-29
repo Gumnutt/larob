@@ -1,7 +1,12 @@
-uuid: c0016a0a-3de0-4bcd-9cf5-781df11b345a
+uuid: 0434d210-6507-429e-b96e-bdb7e99020fc
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - type_tray
+third_party_settings:
+  type_tray:
+    existing_nodes_link_text: 'View existing <em class="placeholder">Basic page</em> content'
 _core:
   default_config_hash: KuyA4NHPXcmKAjRtwa0vQc2ZcyrUJy6IlS2TAyMNRbc
 name: 'Basic page'

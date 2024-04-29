@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Drupal settings entry point.
@@ -16,6 +17,8 @@ $settings['file_scan_ignore_directories'] = [
   'bower_components',
 ];
 $settings['config_sync_directory'] = '../config/sync';
+
+$settings['webprofiler_error_page_disabled'] = TRUE;
 
 // Include a generic Platform.sh settings file if remote.
 $platformsh = new \Platformsh\ConfigReader\Config();
