@@ -1,0 +1,9 @@
+{% extends 'container.html.twig' %}
+
+{%
+  set classes = [
+    'filter-wrapper',
+  ]
+%}
+
+{% do attributes.addClass(classes) %}

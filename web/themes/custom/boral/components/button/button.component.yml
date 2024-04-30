@@ -1,0 +1,33 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Button
+description: JavaScript enhanced button that tracks the number of times a user clicked it.
+props:
+  type: object
+  required:
+    - title
+  properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
+    variant:
+      type: string
+      title: Variant
+      description: Allows the user to define the variant of the button. The options avaliable are primary, secondary and tertiary
+      enum:
+        - primary
+        - secondary
+        - tertiary
+    title:
+      type: string
+      title: Title
+      description: The button text
+    link:
+      type: string
+      title: Link
+      description: The link for the button
+    icon:
+      type: string
+      title: Icon
+      description: The icon for the button
+    download:
+      type: boolean
+      title: Download link

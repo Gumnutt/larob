@@ -1,11 +1,17 @@
 import fs from 'fs'
 import YAML from 'yaml'
 import path from 'path'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig, loadEnv, normalizePath } from 'vite'
+import postcss from 'postcss';
 import autoprefixer from 'autoprefixer'
+import postcssImport from 'postcss-import'
 import eslint from 'vite-plugin-eslint'
 import liveReload from 'vite-plugin-live-reload'
 import { viteExternalsPlugin } from 'vite-plugin-externals'
+import {glob} from 'glob'
+import postcssNesting from 'postcss-nesting';
+
+const { readFile, writeFile } = fs.promises;
 
 // Resolve dirs.
 const pwd = path.resolve(__dirname, '.')
@@ -43,6 +49,41 @@ ckeditorInput.forEach(v => {
   outputMap[path.basename(v).replace('.pcss', '.css')] = 'assets/[name].[ext]'
 })
 
+// SDC theming
+function drupalSDC() {
+  return {
+    name: 'drupal-sdc',
+    enforce: 'pre',
+    async handleHotUpdate({ file, server }) {
+      // Check if the changed file is a .pcss file
+      if (file.includes('components') && file.endsWith('.pcss')) {
+        console.log(`Recompiling ${file}`);
+        try {
+          const css = await readFile(file, 'utf-8');
+          const result = await postcss([postcssImport(), postcssNesting(), autoprefixer()])
+            .process(css, { from: undefined });
+
+          const cssFileName = file.replace('.pcss', '.css');
+          await writeFile(cssFileName, result.css);
+          console.log(`Updated: ${cssFileName}`);
+          server.hot.send({
+            type: 'full-reload',
+            updates: [{
+              type: 'update', // use 'js-update' to trigger a reload of the module
+              path: normalizePath(cssFileName),
+              acceptedPath: normalizePath(cssFileName),
+              timestamp: Date.now()
+            }]
+          });
+        } catch (error) {
+          console.error(`Error processing ${file}: ${error}`);
+        }
+        return []; // Returning an empty array signals that the update has been handled
+      }
+    }
+  };
+}
+
 export default ({ mode }) => {
   const env = loadEnv(mode, drupalPath, '')
 
@@ -56,6 +97,7 @@ export default ({ mode }) => {
         once: 'once',
         drupalSettings: 'drupalSettings',
       }),
+      drupalSDC(),
     ],
 
     base: mode === 'development' ? '/' : basePath,
@@ -82,7 +124,7 @@ export default ({ mode }) => {
       },
       postcss: {
         plugins: [
-          autoprefixer(),
+          postcssImport, postcssNesting, autoprefixer
         ],
       },
     },

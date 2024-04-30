@@ -1,0 +1,20 @@
+{% set classes = [
+  'boral-button',
+  variant ? 'button--' ~ variant : 'button',
+] %}
+
+
+{% set attributes = attributes.addClass(classes) %}
+{% set attributes = attributes.removeClass('cer-accordion') %}
+{% if link %}
+  {% set link_parts = link|split(".") %}
+  {% set attributes = attributes.setAttribute('href', link) %}
+  {% if link_parts|length > 1 and link_parts|last matches '/^[a-zA-Z0-9]+$/' or download %}
+    {% set attributes = attributes.setAttribute('download', true) %}
+  {% endif %}
+{% endif %}
+
+<a {{attributes}}>
+  {{ icon ? icon|raw : null }}
+  {{- title -}}
+</a>

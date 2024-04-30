@@ -1,0 +1,46 @@
+// _variables.scss
+
+// Important: This file is added to every entrypoint scss.
+// Do not add any CSS in this file. Only variables.
+
+@import 'bootstrap/scss/functions';
+
+// Variables come next
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+
+// Optional variable overrides here
+$enable-smooth-scroll: false;
+
+$viva-magenta: #bb2649;
+
+$custom-theme-colors: (
+  'teal': $teal,
+  'viva-magenta': $viva-magenta,
+);
+
+$font-size-lg: 1.15rem;
+
+$breadcrumb-font-size: $font-size-sm;
+$breadcrumb-margin-bottom: 0;
+
+$blockquote-font-size: $font-size-lg;
+
+$form-label-font-weight: bold;
+
+$legend-margin-bottom: $form-label-margin-bottom;
+$legend-font-size: $form-label-font-size;
+$legend-font-weight: $form-label-font-weight;
+
+// Optional Sass map overrides here
+$theme-colors: map-merge($theme-colors, $custom-theme-colors);
+
+$modal-backdrop-bg: var(--bs-gray-800);
+$modal-backdrop-opacity: 0.8;
+
+$tooltip-font-size: 0.75rem;
+
+// Rest of bootstrap imports
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/utilities';

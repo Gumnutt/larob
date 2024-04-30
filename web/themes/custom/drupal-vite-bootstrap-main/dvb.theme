@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * @file
+ * DVB theme.
+ *
+ * Try and keep this file as clean as possible.
+ * Try and use theme files in ./includes for additional theming logic.
+ */
+
+declare(strict_types=1);
+
+use Drupal\dvb\Vite\ViteLibrary;
+
+/**
+ * Load include files which contain additional theming logic.
+ */
+foreach (glob(dirname(__FILE__) . '/includes/*.theme') as $file) {
+  include $file;
+}
+
+/**
+ * Implements hook_library_info_alter().
+ *
+ * - Convert vite asset paths and modify libraries.
+ */
+function dvb_library_info_alter(array &$libraries, string $extension): void {
+  if ($extension === \Drupal::service('theme_handler')->getDefault()) {
+    $libraries = \Drupal::classResolver(ViteLibrary::class)->alter($libraries);
+  }
+}

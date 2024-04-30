@@ -1,0 +1,11 @@
+{% extends 'container.html.twig' %}
+
+{%
+  set classes = [
+    has_parent ? 'd-flex',
+    has_parent ? 'gap-3',
+    has_parent ? 'align-items-center',
+  ]
+%}
+
+{% do attributes.addClass(classes) %}

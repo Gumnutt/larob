@@ -1,0 +1,13 @@
+{% extends 'container.html.twig' %}
+
+{%
+  set classes = [
+    'row',
+    'row-cols-2',
+    'row-cols-lg-3',
+    'row-cols-xl-4',
+    'gy-4',
+  ]
+%}
+
+{% do attributes.addClass(classes) %}
