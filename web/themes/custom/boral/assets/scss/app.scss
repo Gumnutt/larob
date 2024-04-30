@@ -1,0 +1,20 @@
+// DVB app.scss
+
+// Drupal specific fixes that can't be templated.
+@import 'drupal/drupal';
+
+// Regions
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/layout--twocol';
+
+// Navigation
+@import 'navigation/primary-menu';
+
+// Text
+@import 'content/elements';
+@import 'content/spacing';
+@import 'content/fields';
+
+// WYSIWYG
+@import 'ckeditor';

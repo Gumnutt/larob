@@ -40,6 +40,7 @@
         "drupal/simple_sitemap": "^4.1",
         "drupal/symfony_mailer": "^1.4",
         "drupal/tfa": "^1.7",
+        "drupal/vite": "^1.1",
         "drupal/webform": "^6.2",
         "drupal/webprofiler": "10.1.x-dev@dev",
         "drush/drush": "^12.5",

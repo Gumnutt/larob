@@ -1,0 +1,43 @@
+// Very top of page, eg beta bar.
+.region-alerts {
+  --bs-link-color-rgb: var(--bs-dark-rgb);
+  --bs-link-hover-color-rgb: var(--bs-dark-rgb);
+}
+
+.site-header {
+  // Generic links.
+  --bs-link-color-rgb: var(--bs-white-rgb);
+  --bs-link-hover-color-rgb: var(--bs-teal-rgb);
+
+  // Nav links.
+  --bs-link-color: var(--bs-white);
+  --bs-link-hover-color: var(--bs-teal);
+}
+
+// Fix devel z-indexes.
+.region-messages {
+  position: relative;
+  z-index: 1;
+}
+
+// Square up as its 100% width.
+.region-messages .alert,
+.region-messages .messages {
+  --bs-alert-border-radius: 0;
+  --bs-alert-margin-bottom: 0;
+}
+
+// This also appears on the maintenance page.
+.site-branding {
+  @include transition;
+
+  text-decoration: none;
+
+  .site-logo {
+    max-width: clamp(2rem, 7vw, 25vw);
+
+    img {
+      max-height: clamp(2rem, 7vw, 4rem);
+    }
+  }
+}

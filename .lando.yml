@@ -3,7 +3,17 @@ recipe: drupal10
 config:
   webroot: web
 
+services:
+  node:
+    type: node:20
+    ssl: true
+    sslExpose: false
+    port: 3000
+    scanner: false
+
 tooling:
+  npm:
+    service: node
   drush:
     service: appserver
     env:
