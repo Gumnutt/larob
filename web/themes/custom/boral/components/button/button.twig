@@ -1,0 +1,7 @@
+{# {% import '@boral/macros/icon.html.twig' as icon %}
+{% set display_icon = selectedIcon ? icon.svg({icon: paragraph._heading_icon.value|raw, title: "Accordion icon", desc: "An icon descriptive of the accordions contents"}) : null %} #}
+
+<button class="boral-button {{ type }} {{ variant }}" type="button">
+  {{ text }}
+  {{ icon }}
+</button>

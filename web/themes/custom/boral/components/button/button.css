@@ -1,0 +1,17 @@
+button {
+  .primary& {
+    background-color: #b90000;
+    color: #fff;
+    border: 1px solid #b90000;
+  }
+  .secondary& {
+    background-color: #fff;
+    color: #0073e6;
+    border: 1px solid #0073e6;
+  }
+  .tertiary& {
+    background-color: #919191;
+    color: #00e66f;
+    border: 1px solid #00e66f;
+  }
+}

@@ -1,0 +1,27 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: button
+status: stable
+description: A basic button
+props:
+  type: object
+  properties:
+    text:
+      type: string
+      title: text
+      description: the buttons text
+      examples: []
+    type:
+      type: string
+      title: Type
+      description: the buttons type (primary, secondary)
+      examples: []
+    variant:
+      type: string
+      title: Variant
+      description: Variant style (rounded, bordered, filled)
+      examples: []
+    icon:
+      type: string
+      title: Icon
+      description: Icon to display
+      examples: []

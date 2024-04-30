@@ -29,3 +29,16 @@ function boral_library_info_alter(array &$libraries, string $extension): void {
     $libraries = \Drupal::classResolver(ViteLibrary::class)->alter($libraries);
   }
 }
+
+function boral_preprocess_html(&$variables)
+{
+  // $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+  // $icons = file_get_contents(\Drupal::theme()->getActiveTheme()->getPath() . '/public/spritemap.svg');
+
+  // // Add a new render array to page_bottom so the icons
+  // // get added to the page.
+  // $variables['page_bottom']['icons'] = array(
+  //   '#type' => 'inline_template',
+  //   '#template' => '<span class="hidden">' . $icons . '</span>',
+  // );
+}

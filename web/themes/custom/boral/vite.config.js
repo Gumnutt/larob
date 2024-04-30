@@ -4,6 +4,8 @@ import path from 'path'
 import { defineConfig, loadEnv } from 'vite'
 import autoprefixer from 'autoprefixer'
 import eslint from 'vite-plugin-eslint'
+import twig from 'vite-plugin-twig-drupal'
+import { join } from 'node:path'
 import liveReload from 'vite-plugin-live-reload'
 import { viteExternalsPlugin } from 'vite-plugin-externals'
 
@@ -14,8 +16,8 @@ const themePath = pwd.match(/\/themes\/[^\/]+\/[^\/]+/i)
 const basePath = `${themePath ? themePath[0] : ''}/dist/`
 
 // Extract YML as object.
-const yaml = (filename) => {
-  const path = fs.readdirSync(pwd).find(fn => fn.endsWith(filename));
+const yaml = filename => {
+  const path = fs.readdirSync(pwd).find(fn => fn.endsWith(filename))
   return YAML.parse(fs.readFileSync(path, 'utf8'))
 }
 
@@ -48,7 +50,14 @@ export default ({ mode }) => {
 
   const config = {
     plugins: [
-      eslint(),
+      eslint({
+        exclude: [/virtual:/, /node_modules/, /sb-preview/],
+      }),
+      twig({
+        namespaces: {
+          components: join(__dirname, 'components'),
+        },
+      }),
       liveReload(__dirname + '/**/*.(php|theme|twig|module)'),
       viteExternalsPlugin({
         jquery: 'jQuery',
@@ -66,10 +75,10 @@ export default ({ mode }) => {
       rollupOptions: {
         input: [...librariesInput, ...ckeditorInput],
         output: {
-          assetFileNames: (assetInfo) => {
+          assetFileNames: assetInfo => {
             return outputMap[assetInfo.name] || 'assets/[name].[hash].[ext]'
           },
-        }
+        },
       },
     },
 
@@ -81,9 +90,7 @@ export default ({ mode }) => {
         },
       },
       postcss: {
-        plugins: [
-          autoprefixer(),
-        ],
+        plugins: [autoprefixer()],
       },
     },
 
