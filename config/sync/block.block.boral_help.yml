@@ -1,0 +1,22 @@
+uuid: fbdb56fa-ee41-4a33-a749-d8556e3e4128
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - boral
+_core:
+  default_config_hash: I6_DQRYPm9QzB4oL4a7wTvFyrDLCVnnse85SVaJ7mkk
+id: boral_help
+theme: boral
+region: help
+weight: -6
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

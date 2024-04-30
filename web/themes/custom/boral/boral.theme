@@ -10,7 +10,7 @@
 
 declare(strict_types=1);
 
-use Drupal\dvb\Vite\ViteLibrary;
+use Drupal\boral\Vite\ViteLibrary;
 
 /**
  * Load include files which contain additional theming logic.

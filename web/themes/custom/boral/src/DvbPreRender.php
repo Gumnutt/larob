@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\dvb;
+namespace Drupal\boral;
 
 use Drupal\Core\Security\TrustedCallbackInterface;
 

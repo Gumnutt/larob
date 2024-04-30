@@ -1,0 +1,27 @@
+uuid: d919f9c0-2648-466c-87fa-6fdc26dc25e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: MCxxIcjfYNqL06w_NR8uI75OOAwtP9-_r9mnf53zrrE
+id: boral_account_menu
+theme: boral
+region: secondary_menu
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

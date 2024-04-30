@@ -1,0 +1,20 @@
+uuid: 6619f3a7-67cf-4ce2-9f34-286a743fad6c
+langcode: en
+status: true
+dependencies:
+  theme:
+    - boral
+_core:
+  default_config_hash: SyfJoresixETBb9CLorX04mAt0eHTnDPTa-knrRDHag
+id: boral_page_title
+theme: boral
+region: content
+weight: -3
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * DVB field alterations.
+ * boral field alterations.
  */
 
 declare(strict_types=1);
@@ -15,7 +15,7 @@ use Drupal\Core\Render\Element;
  *
  * - Add field type and view mode suggestions to field.
  */
-function dvb_theme_suggestions_field_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_field_alter(array &$suggestions, array $variables): void {
   $element = $variables['element'];
 
   // Inject at specific position. @see system_theme_suggestions_field().
@@ -40,7 +40,7 @@ function dvb_theme_suggestions_field_alter(array &$suggestions, array $variables
  * - Get the entity from the first child element within the group.
  * - Set the value of title to any field_title on entity.
  */
-function dvb_preprocess_field_group_accordion_item(array &$variables): void {
+function boral_preprocess_field_group_accordion_item(array &$variables): void {
   $element = $variables['element'];
 
   foreach (Element::children($element) as $child_name) {

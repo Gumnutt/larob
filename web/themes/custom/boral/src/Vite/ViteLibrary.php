@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\dvb\Vite;
+namespace Drupal\boral\Vite;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -15,11 +15,11 @@ final class ViteLibrary implements ContainerInjectionInterface {
   /**
    * Construct the vite library utility.
    *
-   * @param \Drupal\dvb\Vite\ViteAsset $asset
+   * @param \Drupal\boral\Vite\ViteAsset $asset
    *   The vite asset.
-   * @param \Drupal\dvb\Vite\ViteManifest $manifest
+   * @param \Drupal\boral\Vite\ViteManifest $manifest
    *   The vite manifest.
-   * @param \Drupal\dvb\Vite\ViteMode $mode
+   * @param \Drupal\boral\Vite\ViteMode $mode
    *   The vite mode.
    */
   public function __construct(

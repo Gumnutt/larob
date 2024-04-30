@@ -4,7 +4,7 @@
  * Adds a floating "back to top" element.
  */
 
-import '../../scss/navigation/back-top.scss';
+// import '../../pcss/navigation/back-top.pcss';
 
 export default class Module {
   constructor() {

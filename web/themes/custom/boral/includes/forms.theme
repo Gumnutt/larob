@@ -8,12 +8,12 @@
 declare(strict_types=1);
 
 use Drupal\Component\Utility\Xss;
-use Drupal\dvb\DvbPreRender;
+use Drupal\boral\DvbPreRender;
 
 /**
  * Implements hook_element_info_alter().
  */
-function dvb_element_info_alter(&$type) {
+function boral_element_info_alter(&$type) {
   // @todo Refactor when https://www.drupal.org/node/3016343 is fixed.
   if (isset($type['text_format'])) {
     $type['text_format']['#pre_render'][] = [DvbPreRender::class, 'textFormat'];
@@ -25,7 +25,7 @@ function dvb_element_info_alter(&$type) {
  *
  * - Allow HTML safely in buttons. Useful for icons.
  */
-function dvb_preprocess_input(array &$variables): void {
+function boral_preprocess_input(array &$variables): void {
   if (in_array($variables['element']['#type'] ?? [], ['button', 'submit'])) {
     $variables['safe_value_label'] = Xss::filter((string) $variables['attributes']['value']);
   }
@@ -36,7 +36,7 @@ function dvb_preprocess_input(array &$variables): void {
  *
  * - Pass input type THEME_theme_suggestions_form_element_label_alter.
  */
-function dvb_preprocess_form_element(array &$variables): void {
+function boral_preprocess_form_element(array &$variables): void {
   if (isset($variables['element']['#type'])) {
     $variables['label']['#form_element_type'] = $variables['element']['#type'];
   }
@@ -45,7 +45,7 @@ function dvb_preprocess_form_element(array &$variables): void {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function dvb_theme_suggestions_form_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_form_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#id'])) {
     $suggestions[] = 'form__' . $variables['element']['#id'];
   }
@@ -54,7 +54,7 @@ function dvb_theme_suggestions_form_alter(array &$suggestions, array $variables)
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function dvb_theme_suggestions_form_element_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_form_element_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#type'])) {
     $suggestions[] = 'form_element__' . $variables['element']['#type'];
   }
@@ -63,7 +63,7 @@ function dvb_theme_suggestions_form_element_alter(array &$suggestions, array $va
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function dvb_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_form_element_label_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#form_element_type'])) {
     $suggestions[] = 'form_element_label__type__' . $variables['element']['#form_element_type'];
   }
@@ -72,7 +72,7 @@ function dvb_theme_suggestions_form_element_label_alter(array &$suggestions, arr
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function dvb_theme_suggestions_container_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_container_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#type'])) {
     $suggestions[] = 'container__' . $variables['element']['#type'];
   }

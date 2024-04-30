@@ -9,10 +9,6 @@ import('./modules/main-menu').then(({ default: Module }) => {
   new Module();
 });
 
-import('./modules/bootstrap').then(({ default: Module }) => {
-  new Module();
-});
-
 import('./modules/mobile-menu').then(({ default: Module }) => {
   new Module();
 });

@@ -1,0 +1,22 @@
+uuid: e0ee39ce-2ba2-4159-9b1b-c0316129d762
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: QFfjKChw53xznLlkTIbrZO0-oBBoBZB6ivb9Tog_L-o
+id: boral_powered
+theme: boral
+region: footer
+weight: -6
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

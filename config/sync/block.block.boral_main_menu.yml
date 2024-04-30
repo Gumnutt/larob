@@ -1,0 +1,27 @@
+uuid: dc584f3b-c588-4130-a221-0fe8dc663b29
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: oQvVV37rpdjJqKYcwF_96flfZYmJCkV9j20O4DbPfAA
+id: boral_main_menu
+theme: boral
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 3
+  expand_all_items: true
+visibility: {  }

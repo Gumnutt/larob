@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\dvb\Vite;
+namespace Drupal\boral\Vite;
 
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;
 use Drupal\Core\Extension\ThemeHandlerInterface;
@@ -18,11 +18,11 @@ final class ViteAsset implements ContainerInjectionInterface {
    *
    * @param \Drupal\Core\Extension\ThemeHandlerInterface $themeHandler
    *   The theme handler service.
-   * @param \Drupal\dvb\Vite\ViteManifest $manifest
+   * @param \Drupal\boral\Vite\ViteManifest $manifest
    *   The vite manifest.
-   * @param \Drupal\dvb\Vite\ViteMode $mode
+   * @param \Drupal\boral\Vite\ViteMode $mode
    *   The vite mode.
-   * @param \Drupal\dvb\Vite\ViteServer $server
+   * @param \Drupal\boral\Vite\ViteServer $server
    *   The vite server.
    */
   public function __construct(

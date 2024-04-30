@@ -1,0 +1,22 @@
+uuid: 07e80500-87d2-4057-a7e6-d4f41b014385
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: 2HpC9yot336LPou2eyzY383JBv_btfINbFRG8at9Mrk
+id: boral_content
+theme: boral
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

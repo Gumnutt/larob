@@ -35,4 +35,4 @@ dependencies:
   - 'core:help'
   - 'core:menu_ui'
   - 'core:menu_link_content'
-generator: 'dvb:unknown-version'
+generator: 'boral:unknown-version'

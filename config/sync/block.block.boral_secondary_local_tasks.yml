@@ -1,0 +1,22 @@
+uuid: 0053c2b6-b292-4c16-8e01-fbd606cfc432
+langcode: en
+status: true
+dependencies:
+  theme:
+    - boral
+_core:
+  default_config_hash: tFoa1HrH6ycA2JtedYewqtQIFSZ4PCLbnkEw-aF9ZHI
+id: boral_secondary_local_tasks
+theme: boral
+region: content
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }

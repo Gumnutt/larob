@@ -8,10 +8,7 @@ app:
     - core/once
   css:
     theme:
-      assets/scss/bootstrap.scss:
-        minified: true
-        preprocess: false
-      assets/scss/app.scss:
+      assets/pcss/app.pcss:
         minified: true
         preprocess: false
   js:

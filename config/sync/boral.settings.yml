@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: EhbZxSZ8bRJMa0U9YQmKEDJYVxm6hTS7Ow8xl8OJOrw
+features:
+  node_user_picture: 0
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+vite:
+  port: '3000'
+  dist_path: dist
+  manifest_path: dist/.vite/manifest.json

@@ -1,0 +1,25 @@
+uuid: ab56302c-f523-490e-8226-5a2a3f5f8d18
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: bE_C4vMwc7vFdIocfA2tgEpnJoBLqeS_zZwIyDAdutk
+id: boral_site_branding
+theme: boral
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

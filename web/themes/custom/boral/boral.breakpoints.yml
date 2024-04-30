@@ -1,28 +1,28 @@
-dvb.sm:
+boral.sm:
   label: sm
   mediaQuery: 'all and (max-width: 767px)'
   weight: 1
   multipliers:
     - 1x
-dvb.md:
+boral.md:
   label: md
   mediaQuery: 'all and (min-width: 768px)'
   weight: 2
   multipliers:
     - 1x
-dvb.lg:
+boral.lg:
   label: lg
   mediaQuery: 'all and (min-width: 992px)'
   weight: 3
   multipliers:
     - 1x
-dvb.xl:
+boral.xl:
   label: xl
   mediaQuery: 'all and (min-width: 1200px)'
   weight: 4
   multipliers:
     - 1x
-dvb.xxl:
+boral.xxl:
   label: xxl
   mediaQuery: 'all and (min-width: 1400px)'
   weight: 5

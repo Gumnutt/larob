@@ -1,0 +1,20 @@
+uuid: 903081ee-5a43-4c08-aa39-e0aa522fe329
+langcode: en
+status: true
+dependencies:
+  theme:
+    - boral
+_core:
+  default_config_hash: JFCx-PU9hSJHA987E0-gF4N-kcvywum2nJ6rKovF8Rg
+id: boral_primary_admin_actions
+theme: boral
+region: content
+weight: -6
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

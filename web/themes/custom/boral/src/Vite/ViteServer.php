@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Drupal\dvb\Vite;
+namespace Drupal\boral\Vite;
 
 use Drupal\Component\Serialization\Json;
 use Drupal\Core\DependencyInjection\ContainerInjectionInterface;

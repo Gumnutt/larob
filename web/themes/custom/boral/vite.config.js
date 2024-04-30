@@ -34,13 +34,13 @@ const librariesInput = Object.keys(librariesYaml)
 const infoYaml = yaml('.info.yml')
 const ckeditorInput = (infoYaml['ckeditor5-stylesheets'] || [])
   .filter(v => v.match(/\.css$/))
-  .map(v => v.replace('.css', '.scss'))
-  .map(v => v.replace('dist/assets', 'assets/scss'))
+  .map(v => v.replace('.css', '.pcss'))
+  .map(v => v.replace('dist/assets', 'assets/pcss'))
 
 // Statically rename the output file.
 const outputMap = {}
 ckeditorInput.forEach(v => {
-  outputMap[path.basename(v).replace('.scss', '.css')] = 'assets/[name].[ext]'
+  outputMap[path.basename(v).replace('.pcss', '.css')] = 'assets/[name].[ext]'
 })
 
 export default ({ mode }) => {
@@ -76,8 +76,8 @@ export default ({ mode }) => {
     css: {
       devSourcemap: true,
       preprocessorOptions: {
-        scss: {
-          additionalData: `@import '/assets/scss/variables.scss';`,
+        pcss: {
+          additionalData: `@import '/assets/pcss/variables.pcss';`,
         },
       },
       postcss: {

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * DVB block alterations.
+ * boral block alterations.
  */
 
 declare(strict_types=1);
@@ -14,7 +14,7 @@ use Drupal\block\Entity\Block;
  *
  * - Pass block region to THEME_theme_suggestions_menu_alter.
  */
-function dvb_preprocess_block(array &$variables): void {
+function boral_preprocess_block(array &$variables): void {
   if (isset($variables['elements']['#id'])) {
     if ($block = Block::load($variables['elements']['#id'])) {
       $variables['content']['#attributes']['data-region'] = $block->getRegion();
@@ -25,7 +25,7 @@ function dvb_preprocess_block(array &$variables): void {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function dvb_theme_suggestions_block_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_block_alter(array &$suggestions, array $variables): void {
   if (isset($variables['element']['#id']) && $block = Block::load($variables['elements']['#id'])) {
     foreach ($suggestions as $suggestion) {
       $suggestions[] = $suggestion . '__region__' . $block->getRegion();
@@ -38,7 +38,7 @@ function dvb_theme_suggestions_block_alter(array &$suggestions, array $variables
  *
  * - Add block region theme suggestions for menu.
  */
-function dvb_theme_suggestions_menu_alter(array &$suggestions, array $variables): void {
+function boral_theme_suggestions_menu_alter(array &$suggestions, array $variables): void {
   if (isset($variables['attributes']['data-region'])) {
     $suggestions[] = 'menu__region__' . $variables['attributes']['data-region'];
   }

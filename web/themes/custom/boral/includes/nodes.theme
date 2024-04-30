@@ -14,7 +14,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * - Remove contextual links from full page view (Annoyance).
  */
-function dvb_preprocess_node(array &$variables): void {
+function boral_preprocess_node(array &$variables): void {
   if ($variables['elements']['#view_mode'] === 'full') {
     unset($variables['elements']['#contextual_links']);
 
@@ -30,7 +30,7 @@ function dvb_preprocess_node(array &$variables): void {
  *
  * - Force the weight of the advanced, footer and actions form elements.
  */
-function dvb_form_node_form_alter(array &$form, FormStateInterface &$form_state, string $form_id): void {
+function boral_form_node_form_alter(array &$form, FormStateInterface &$form_state, string $form_id): void {
   if (isset($form['advanced'])) {
     $form['advanced']['#weight'] = 800;
   }

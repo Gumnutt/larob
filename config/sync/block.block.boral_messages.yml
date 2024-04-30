@@ -1,0 +1,22 @@
+uuid: 5b49fae2-de86-49a7-9d20-5bc9be858809
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: 8_xKoz0g03yF1wGSoArMRPab8vFX88MSbF0_WoNf0BQ
+id: boral_messages
+theme: boral
+region: messages
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

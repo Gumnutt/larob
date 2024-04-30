@@ -2,8 +2,8 @@
  * DVB mobile-menu.js
  */
 
-import '../../scss/navigation/mobile-button.scss';
-import '../../scss/navigation/mobile-menu.scss';
+// import '../../pcss/navigation/mobile-button.pcss';
+// import '../../pcss/navigation/mobile-menu.pcss';
 
 export default class Module {
   constructor() {

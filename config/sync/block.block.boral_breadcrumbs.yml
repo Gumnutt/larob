@@ -1,0 +1,22 @@
+uuid: 16211080-4e7b-4916-ac62-dda2320d38a1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - boral
+_core:
+  default_config_hash: vikLd88gBpOhWkKUt5MD_dtas8-2k7-z5Dj-e5kVzjg
+id: boral_breadcrumbs
+theme: boral
+region: breadcrumb
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
