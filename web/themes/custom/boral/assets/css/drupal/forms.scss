@@ -1,0 +1,219 @@
+// Drupal clobber.
+input.form-text {
+  margin-top: 0;
+}
+
+// Some elements contain multiple form-items in the form-item.
+// Eg password on registration page.
+:is(.form-item, .form-wrapper):not(.form--inline) > :is(.form-wrapper, .form-item) + :is(.form-wrapper, .form-item) {
+  margin-top: map-get($spacers, 3);
+}
+
+// Add an asterisk.
+.form-required::after {
+  content: '\00a0*';
+  color: var(--bs-danger);
+}
+
+.required.error + .ck-editor {
+  --ck-color-base-border: var(--bs-danger);
+}
+
+// Unstyled button.
+.button:not(.btn) {
+  @include button-outline-variant($secondary);
+
+  &.button--primary {
+    @include button-outline-variant($primary);
+  }
+
+  &.button--danger {
+    @include button-outline-variant($danger);
+  }
+}
+
+// Small buttons from Drupal that snuck through somehow.
+.small .button:not(.btn),
+.button--small,
+.button--extrasmall {
+  @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-border-radius-sm);
+}
+
+// Button to style as plain text.
+.filter-wrapper a,
+button.webform-details-toggle-state,
+button.link:not(.btn) {
+  @include font-size($font-size-sm);
+
+  margin: 0;
+  padding: 0;
+  color: var(--bs-secondary);
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: normal;
+  line-height: inherit;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--bs-link-hover-color);
+  }
+}
+
+.form-check-input,
+.form-check-label {
+  cursor: pointer;
+}
+
+// Webform
+.webform-wizard-pages-links {
+  display: none !important;
+}
+.webform-details-toggle-state-wrapper {
+  margin-top: 0;
+}
+.webform-scale-option .form-check {
+  padding-left: 0;
+}
+.webform-scale-option .form-check-label {
+  line-height: 1.6;
+}
+.rateit {
+  display: flex;
+}
+.rateit-range {
+  vertical-align: middle;
+}
+.webform-flexbox {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  gap: var(--bs-gutter-x);
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
+  }
+}
+.webform-signature-pad {
+  border-radius: var(--bs-border-radius);
+  .button {
+    top: map-get($spacers, 3);
+    right: map-get($spacers, 3);
+  }
+}
+.webform-flexbox + .webform-flexbox {
+  margin-top: map-get($spacers, 3);
+}
+.webform-flex--container {
+  margin: 0;
+}
+.webform-flex--container > .form-wrapper {
+  padding: 0 !important;
+  border: none !important;
+}
+
+// Select 2
+.select2-container .select2-selection {
+  height: 38px;
+  border-color: var(--bs-border-color);
+  &.select2-selection--single .select2-selection__rendered {
+    line-height: 38px;
+  }
+}
+
+// Sign up form injected by Drupal JS.
+.password-suggestions,
+.password-confirm-message,
+.password-strength {
+  @include font-size($font-size-sm);
+
+  margin-top: map-get($spacers, 1);
+  color: var(--bs-secondary);
+
+  ul {
+    margin: 0;
+  }
+  .ok {
+    color: var(--bs-success);
+  }
+  .error {
+    color: var(--bs-danger);
+  }
+}
+
+// Use bootstrap colors.
+.password-strength {
+  .is-weak {
+    background: var(--bs-danger);
+  }
+  .is-fair {
+    background: var(--bs-warning);
+  }
+  .is-good {
+    background: var(--bs-info);
+  }
+  .is-strong {
+    background: var(--bs-success);
+  }
+
+  .password-strength__indicator,
+  .password-strength__meter {
+    border-radius: $progress-border-radius;
+  }
+
+  .password-strength__title {
+    margin-top: map-get($spacers, 1);
+  }
+}
+
+.description.small {
+  > .list-group {
+    --bs-list-group-color: inherit;
+
+    margin-top: map-get($spacers, 3);
+  }
+}
+
+.node-preview-form-select.gin-layout-container {
+  display: flex !important;
+  .form-label {
+    margin: 0;
+    white-space: nowrap;
+    font-weight: normal;
+  }
+  .form-item-view-mode {
+    display: none;
+
+    .form-select {
+      @include font-size($font-size-sm);
+    }
+
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+  }
+}
+
+.entity-content-form-footer {
+  margin: map-get($spacers, 3) 0;
+  padding: map-get($spacers, 3);
+  border: var(--bs-border-width) solid var(--bs-border-color-translucent);
+  border-radius: var(--bs-border-radius);
+}
+
+// Disable media contextual links within form.
+form .lpb-layout .field--type-entity-reference .contextual {
+  display: none !important;
+}
+
+// Paragraphs weird.
+.js .field--widget-paragraphs th .paragraphs-actions {
+  margin-right: calc(var(--bs-gutter-x) * -0.25);
+}
+
+// Poorly made composites
+.input-group .field-prefix:empty {
+  display: none;
+}

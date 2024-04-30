@@ -1,0 +1,128 @@
+/**
+ * @file
+ * Contains minimal layout styling for the media library.
+ */
+
+.view-id-media_library {
+  .view-header {
+    float: right;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .view-content {
+    clear: right;
+  }
+}
+
+.view-id-media_library.view-display-id-widget_table {
+  .views-field-media-library-select-form {
+    width: 20px;
+  }
+  .views-field-thumbnail__target-id {
+    width: 64px;
+    img {
+      max-width: 64px;
+      height: auto;
+    }
+  }
+  .views-field-uid {
+    width: 20%;
+  }
+  .views-field-changed {
+    width: 20%;
+  }
+}
+
+.view-id-media_library.view-display-id-widget {
+  .views-field-media-library-select-form {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: calc(var(--bs-gutter-x) / 2 + 10px);
+  }
+}
+
+.js-media-library-item {
+  position: relative;
+  max-width: 100%;
+  cursor: pointer;
+
+  .btn {
+    @include font-size($font-size-sm);
+
+    position: absolute;
+    z-index: 10;
+    top: calc(var(--bs-gutter-x) / 2);
+    right: var(--bs-gutter-x);
+  }
+
+  .ajax-progress {
+    position: absolute;
+    top: calc(var(--bs-gutter-x) / 2);
+    left: var(--bs-gutter-x);
+    .message {
+      display: none;
+    }
+  }
+
+  .form-type-number {
+    @include font-size($font-size-sm);
+
+    margin-top: map-get($spacers, 2);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .field--name-thumbnail {
+    display: flex;
+    user-select: none;
+
+    img[src*='/generic/'] {
+      max-width: 90px;
+      object-fit: contain;
+    }
+
+    @include media-breakpoint-up(md) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .media-library-item--disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &.is-hover .media-library-item__preview-wrapper {
+    border-color: var(--bs-secondary) !important;
+  }
+
+  &.checked .media-library-item__preview-wrapper {
+    border-color: var(--bs-primary) !important;
+  }
+
+  .media-library-item__preview {
+    height: clamp(100px, 10vw, 200px);
+    padding-bottom: 0;
+    > div {
+      height: 100%;
+    }
+  }
+
+  .media-library-item__attributes {
+    position: static;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.js-media-library-add-form {
+  margin-bottom: map-get($spacers, 4);
+}

@@ -5,20 +5,22 @@ description: A basic button
 props:
   type: object
   properties:
+    attributes:
+      type: Drupal\Core\Template\Attribute
     text:
       type: string
       title: text
       description: the buttons text
       examples: []
-    type:
-      type: string
-      title: Type
-      description: the buttons type (primary, secondary)
-      examples: []
     variant:
       type: string
+      title: Type
+      description: variant (primary, secondary, tertiary, ...)
+      examples: []
+    style:
+      type: string
       title: Variant
-      description: Variant style (rounded, bordered, filled)
+      description: Style (rounded, bordered, filled)
       examples: []
     icon:
       type: string

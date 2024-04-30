@@ -8,17 +8,20 @@ export default {
     text: {
       control: { type: 'text' },
     },
-    type: {
+    variant: {
       control: { type: 'select' },
       options: ['primary', 'secondary', 'tertiary'],
     },
-    variant: {
+    style: {
       control: { type: 'select' },
       options: ['rounded', 'bordered', 'filled'],
     },
     icon: {
       control: { type: 'select' },
       options: ['none', 'arrow', 'hex'],
+    },
+    link: {
+      control: { type: 'text' },
     },
   },
   component: Button,
@@ -27,8 +30,8 @@ export default {
 export const Primary = {
   args: {
     text: 'Click me',
-    type: 'primary',
-    variant: 'bordered',
+    variant: 'primary',
+    style: 'bordered',
     icon: 'none',
   },
 }
@@ -36,8 +39,8 @@ export const Primary = {
 export const Secondary = {
   args: {
     text: 'Click me',
-    type: 'secondary',
-    variant: 'bordered',
+    variant: 'secondary',
+    style: 'bordered',
     icon: 'none',
   },
 }
@@ -45,8 +48,8 @@ export const Secondary = {
 export const tertiary = {
   args: {
     text: 'Click me',
-    type: 'tertiary',
-    variant: 'bordered',
+    variant: 'tertiary',
+    style: 'bordered',
     icon: 'none',
   },
 }
