@@ -12,6 +12,7 @@ import liveReload from 'vite-plugin-live-reload'
 import { viteExternalsPlugin } from 'vite-plugin-externals'
 import { glob } from 'glob'
 import postcssNesting from 'postcss-nesting'
+import tailwindcss from 'tailwindcss'
 
 const { readFile, writeFile } = fs.promises
 
@@ -65,6 +66,7 @@ function drupalSDC() {
           const result = await postcss([
             postcssImport(),
             postcssNesting(),
+            tailwindcss(),
             autoprefixer(),
           ]).process(css, { from: undefined })
 
@@ -137,7 +139,7 @@ export default ({ mode }) => {
         },
       },
       postcss: {
-        plugins: [postcssImport, postcssNesting, autoprefixer],
+        plugins: [postcssImport, postcssNesting, tailwindcss, autoprefixer],
       },
     },
 

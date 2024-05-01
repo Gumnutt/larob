@@ -2,22 +2,22 @@
  * DVB main-menu.js
  */
 
-import AccessibleSubmenu from 'accessible-submenu';
+import AccessibleSubmenu from 'accessible-submenu'
 
 export default class Module {
   constructor() {
-    this.menuElement = document.querySelector('.region-primary-menu .nav');
+    this.menuElement = document.querySelector('.region-primary-menu .nav')
 
     if (this.menuElement) {
-      const items = this.menuElement.children;
+      const items = this.menuElement.children
 
-      [...items].forEach((li) => {
-        new AccessibleSubmenu(li, {});
+      ;[...items].forEach((li) => {
+        new AccessibleSubmenu(li, {})
 
-        this.bindTouch(li.querySelector(':scope > a'));
-      });
+        this.bindTouch(li.querySelector(':scope > a'))
+      })
 
-      this.bindTouchWindow();
+      this.bindTouchWindow()
     }
   }
 
@@ -26,20 +26,20 @@ export default class Module {
    */
   bindTouchWindow() {
     document.addEventListener('touchstart', (event) => {
-      const linkTouched = this.elementTouchedLink(event.target, 0);
-      const dropdownTouched = this.elementTouchedDropdown(event.target, 0);
-      const tapped = this.menuElement.querySelectorAll('[data-double-tap="true"]');
+      const linkTouched = this.elementTouchedLink(event.target, 0)
+      const dropdownTouched = this.elementTouchedDropdown(event.target, 0)
+      const tapped = this.menuElement.querySelectorAll('[data-double-tap="true"]')
 
       if (dropdownTouched) {
-        return;
+        return
       }
 
-      [...tapped].forEach((a) => {
+      ;[...tapped].forEach((a) => {
         if (a !== linkTouched) {
-          a.dataset.doubleTap = false;
+          a.dataset.doubleTap = false
         }
-      });
-    });
+      })
+    })
   }
 
   /**
@@ -49,14 +49,14 @@ export default class Module {
    */
   bindTouch(link) {
     if (!link.parentNode.querySelectorAll('.js-submenu').length) {
-      return;
+      return
     }
 
     link.addEventListener('touchend', (event) => {
       if (!this.doubleTapped(event)) {
-        event.preventDefault();
+        event.preventDefault()
       }
-    });
+    })
   }
 
   /**
@@ -67,15 +67,15 @@ export default class Module {
    * @return {boolean} Event target is double tapped.
    */
   doubleTapped(event) {
-    const target = event.currentTarget;
+    const target = event.currentTarget
 
     if (target.dataset.doubleTap) {
-      return true;
+      return true
     }
 
-    target.dataset.doubleTap = true;
+    target.dataset.doubleTap = true
 
-    return false;
+    return false
   }
 
   /**
@@ -89,15 +89,15 @@ export default class Module {
   elementTouchedLink(element, depth) {
     if (depth < 5) {
       if (element?.dataset?.doubleTap) {
-        return element;
+        return element
       }
 
       if (element.parentNode) {
-        return this.elementTouchedLink(element.parentNode, depth + 1);
+        return this.elementTouchedLink(element.parentNode, depth + 1)
       }
     }
 
-    return false;
+    return false
   }
 
   /**
@@ -111,14 +111,14 @@ export default class Module {
   elementTouchedDropdown(element, depth) {
     if (depth < 10) {
       if (element.classList && element.classList.contains('js-submenu')) {
-        return element;
+        return element
       }
 
       if (element.parentNode) {
-        return this.elementTouchedDropdown(element.parentNode, depth + 1);
+        return this.elementTouchedDropdown(element.parentNode, depth + 1)
       }
     }
 
-    return false;
+    return false
   }
 }

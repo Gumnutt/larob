@@ -1,7 +1,7 @@
 {% set classes = [
   'boral-button',
   variant ? 'button--' ~ variant : 'button',
-  style ?? 'button--' ~ style,
+  style ?? 'button--' ~ style
 ] %}
 {% set attributes = attributes.addClass(classes) %}
 {% set attributes = attributes.setAttribute('href', link) %}
