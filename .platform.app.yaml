@@ -86,9 +86,9 @@ hooks:
     export NVM_DIR="$PLATFORM_APP_DIR/.nvm"
     curl -f -o- https://raw.githubusercontent.com/nvm-sh/nvm/$NVM_VERSION/install.sh | bash
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  # cd web/themes/custom/boral
-  # npm install
-  # npm run build
+    cd web/themes/custom/boral
+    npm install
+    npm run build
   # The deploy hook runs after your application has been deployed and started.
   # Code cannot be modified at this point but the database is available.
   # The site is not accepting requests while this script runs so keep it

@@ -4,7 +4,7 @@
  * Fix jquery UI issue with bootstrap.
  */
 
-import jQuery from 'jquery'
+import jQuery from "jquery"
 
 export default class Module {
   constructor() {
@@ -14,7 +14,7 @@ export default class Module {
       return
     }
 
-    $.widget('ui.dialog', $.ui.dialog, {
+    $.widget("ui.dialog", $.ui.dialog, {
       open: function () {
         const close = `
         <span class="ui-button-icon ui-icon ui-icon-closethick"></span>
@@ -22,7 +22,7 @@ export default class Module {
         Close
         `
 
-        const classes = ['ui-button', 'ui-corner-all', 'ui-widget', 'ui-button-icon-only', 'ui-dialog-titlebar-close']
+        const classes = ["ui-button", "ui-corner-all", "ui-widget", "ui-button-icon-only", "ui-dialog-titlebar-close"]
 
         ;[...this.uiDialogTitlebarClose].forEach((button) => {
           button.innerHTML = close
