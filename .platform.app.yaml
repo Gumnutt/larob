@@ -145,6 +145,13 @@ web:
 
       headers:
         Access-Control-Allow-Origin: "*"
+    
+    "/storybook":
+      allow: true
+      allow: true
+      expires: 5m
+      passthru: "/index.php"
+      root: "web/themes/custom/boral/storybook-static"
 
     # The files directory has its own special configuration rules.
     "/sites/default/files":
