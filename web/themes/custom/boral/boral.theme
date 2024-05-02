@@ -11,6 +11,8 @@
 declare(strict_types=1);
 
 use Drupal\boral\Vite\ViteLibrary;
+use Drupal\Core\StringTranslation\ByteSizeMarkup;
+use Drupal\Core\Url;
 
 /**
  * Load include files which contain additional theming logic.
@@ -32,13 +34,13 @@ function boral_library_info_alter(array &$libraries, string $extension): void {
 
 function boral_preprocess_html(&$variables)
 {
-  // $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
-  // $icons = file_get_contents(\Drupal::theme()->getActiveTheme()->getPath() . '/public/spritemap.svg');
+  $variables['#attached']['drupalSettings']['path']['themeUrl'] = \Drupal::theme()->getActiveTheme()->getPath();
+  $icons = file_get_contents(\Drupal::theme()->getActiveTheme()->getPath() . '/dist/assets/spritemap.svg');
 
   // // Add a new render array to page_bottom so the icons
   // // get added to the page.
-  // $variables['page_bottom']['icons'] = array(
-  //   '#type' => 'inline_template',
-  //   '#template' => '<span class="hidden">' . $icons . '</span>',
-  // );
+  $variables['page_bottom']['icons'] = array(
+    '#type' => 'inline_template',
+    '#template' => '<span class="hidden">' . $icons . '</span>',
+  );
 }

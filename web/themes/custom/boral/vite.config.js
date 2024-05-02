@@ -11,6 +11,7 @@ import liveReload from "vite-plugin-live-reload"
 import { viteExternalsPlugin } from "vite-plugin-externals"
 import postcssNesting from "postcss-nesting"
 import tailwindcss from "tailwindcss"
+import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap"
 
 const { readFile, writeFile } = fs.promises
 
@@ -91,6 +92,19 @@ export default ({ mode }) => {
       // eslint({
       //   exclude: [/virtual:/, /node_modules/, /sb-preview/],
       // }),
+      VitePluginSvgSpritemap("./assets/icons/*.svg", {
+        prefix: "icon-",
+        output: {
+          filename: "[name][extname]",
+          name: "icons.svg",
+          view: false,
+          use: true,
+        },
+        styles: {
+          filename: "assets/pcss/spritemap.pcss",
+          lang: "pcss",
+        },
+      }),
       twig({
         namespaces: {
           components: join(__dirname, "components"),
