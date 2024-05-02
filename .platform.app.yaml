@@ -89,6 +89,7 @@ hooks:
     cd web/themes/custom/boral
     npm install
     npm run build
+    npm run build-storybook
   # The deploy hook runs after your application has been deployed and started.
   # Code cannot be modified at this point but the database is available.
   # The site is not accepting requests while this script runs so keep it
