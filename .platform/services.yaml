@@ -9,7 +9,3 @@ db:
 
 cache:
   type: redis:6.0
-
-storybook:
-  type: nodejs:16
-  disk: 512
