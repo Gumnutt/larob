@@ -1,99 +1,31 @@
-:root {
-  --boral-button-radius: var(--radius-2);
-  --boral-button-border-width: 2px;
-  --boral-button-border-color: var(--blue-600);
-  --boral-button-padding-block: var(--size-4);
-  --boral-button-padding-block-small: var(--size-3);
-  --boral-button-padding-inline: var(--size-5);
-  --boral-button-padding-inline-small: var(--size-3-5);
-  --boral-button-background: green;
-  --boral-button-alt-background: var(--white);
-  --boral-button-color: var(--white);
-  --boral-button-alt-color: var(--blue-700);
-  --boral-button-font-size: 18px;
-  --boral-button-line-height: 28px;
-  --boral-button-border: 2px solid var(--blue-600);
-  --boral-button-alt-border: var(--size-px) solid var(--white);
-}
 .boral-button {
-  appearance: button;
-  background-color: var(--boral-button-background);
-  border: var(--boral-button-border);
-  padding-block: var(--boral-button-padding-block, 0px);
-  padding-inline: var(--boral-button-padding-inline, 0px);
-  font-size: var(--boral-button-font-size);
-  line-height: var(--boral-button-line-height);
-  font-family: var(--font-sans);
-  color: var(--boral-button-color);
-  cursor: pointer;
-  font-weight: 400;
-  display: flex;
-  flex-direction: row;
-  width: fit-content;
-  margin-block: var(--size-6);
-  svg {
-    width: var(--size-6);
-    min-width: var(--size-6);
+  --button-color: #000;
+  --button-background-color: #fff;
+  --button-inline-padding: 0rem;
+  --button-block-padding: 0rem;
+  --border-radius: 0.25rem;
+
+  padding-inline: var(--button-inline-padding);
+  padding-block: var(--button-block-padding);
+  color: var(--button-color);
+  background-color: var(--button-background-color);
+  border-radius: var(--border-radius);
+  &[data-size="small"] {
+    --button-inline-padding: 0.75rem;
+    --button-block-padding: 1.5rem;
   }
-  &:hover {
-    --boral-button-background: var(--blue-700);
-    --boral-button-color: var(--white);
-    --link-hover-color: var(--boral-button-color);
-    color: var(--link-hover-color);
+  &[data-size="large"] {
+    --button-inline-padding: 1.875rem;
+    --button-block-padding: 1.125rem;
   }
-  &:visited {
-    color: var(--boral-button-color);
+  &[data-variant="primary"] {
+    --button-color: var(--boral-navy);
+    --button-background-color: #b8d861;
   }
-  &:disabled,
-  &.disabled {
-    cursor: not-allowed;
-    --boral-button-background: var(--grey-300);
-    --boral-button-alt-background: var(--white);
-    --boral-button-alt-color: var(--grey-400);
-    --boral-button-alt-border: var(--size-px) solid var(--grey-400);
+  &[data-variant="secondary"] {
+    --button-color: #fff;
+    --button-background-color: #00a94f;
   }
-  &.button--secondary {
-    --boral-button-background: var(--white);
-    --boral-button-color: var(--blue-700);
-    --boral-button-border: 2px solid var(--blue-600);
-    --boral-button-alt-background: var(--blue-800);
-    --boral-button-alt-color: var(--white);
-    --boral-button-alt-border: 2px solid var(--white);
-    &:hover {
-      --boral-button-background: var(--grey-100);
-      --boral-button-alt-background: #4d6a73;
-    }
-    &:disabled,
-    &.disabled {
-      --boral-button-border: 2px solid var(--grey-400);
-      --boral-button-alt-color: var(--grey-400);
-      --boral-button-alt-border: 2px solid var(--grey-400);
-    }
-  }
-  &.button--tertiary {
-    --boral-button-background: var(--grey-100);
-    --boral-button-color: var(--blue-700);
-    --boral-button-alt-background: #264955;
-    --boral-button-alt-color: var(--white);
-    &:hover {
-      --boral-button-background: var(--grey-200);
-      --boral-button-alt-background: #4d6a73;
-    }
-    &:disabled,
-    &.disabled {
-      --boral-button-color: var(--grey-400);
-      --boral-button-alt-background: #264955;
-    }
-  }
-  &.button--alt {
-    background-color: var(--boral-button-alt-background);
-    color: var(--boral-button-alt-color);
-    border: var(--boral-button-alt-border);
-  }
-  &.button--small {
-    padding-block: var(--boral-button-padding-block-small);
-    padding-inline: var(--boral-button-padding-inline-small);
-    font-size: var(--size-4);
-    line-height: var(--size-6);
+  &[data-variant="text"] {
   }
 }

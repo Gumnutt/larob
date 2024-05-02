@@ -1,4 +1,4 @@
-'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
 name: button
 status: stable
 description: A basic button
@@ -17,13 +17,36 @@ props:
       title: Type
       description: variant (primary, secondary, tertiary, ...)
       examples: []
-    style:
-      type: string
-      title: Variant
-      description: Style (rounded, bordered, filled)
-      examples: []
+      enum:
+        - primary
+        - secondary
+        - tertiary
+        - text
+    solid:
+      type: boolean
+      title: Solid
+      description: is the button solid
+    rounded:
+      type: boolean
+      title: Rounded
+      description: is the button rounded
     icon:
       type: string
       title: Icon
       description: Icon to display
-      examples: []
+    icon_position:
+      type: string
+      title: Icon position
+      description: Is the icon on the left or the right of the button?
+      enum:
+        - left
+        - right
+    link:
+      type: string
+      title: Link
+    size:
+      type: string
+      title: Size
+      enum:
+        - small
+        - large
