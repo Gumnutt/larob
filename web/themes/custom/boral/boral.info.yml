@@ -1,6 +1,6 @@
 name: boral
 type: theme
-'base theme': stable9
+"base theme": stable9
 starterkit: true
 core_version_requirement: ^10
 php: 8.1
@@ -9,6 +9,7 @@ ckeditor5-stylesheets:
 libraries:
   - boral/hmr
   - boral/app
+  - boral/googlefonts
 libraries-override:
   gin/ajax: false
   gin/dialog: false
@@ -20,19 +21,19 @@ libraries-override:
 regions:
   alerts: Alerts
   header: Header
-  primary_menu: 'Primary menu'
-  secondary_menu: 'Secondary menu'
+  primary_menu: "Primary menu"
+  secondary_menu: "Secondary menu"
   messages: Messages
   breadcrumb: Breadcrumb
   highlighted: Highlighted
   help: Help
   content: Content
-  sidebar_first: 'Sidebar first'
-  sidebar_second: 'Sidebar second'
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
   footer: Footer
-  mobile_menu: 'Mobile menu'
+  mobile_menu: "Mobile menu"
 dependencies:
-  - 'core:help'
-  - 'core:menu_ui'
-  - 'core:menu_link_content'
-generator: 'boral:unknown-version'
+  - "core:help"
+  - "core:menu_ui"
+  - "core:menu_link_content"
+generator: "boral:unknown-version"

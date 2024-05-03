@@ -11,9 +11,18 @@ app:
       assets/pcss/app.pcss:
         minified: true
         preprocess: false
+
   js:
     assets/js/app.js:
       minified: true
       preprocess: false
       attributes:
         type: module
+
+googlefonts:
+  css:
+    theme:
+      https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap:
+        type: external
+        minified: true
+        defer: true
