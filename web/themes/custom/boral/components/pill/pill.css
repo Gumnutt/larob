@@ -1,0 +1,29 @@
+.boral-pill {
+  --pill-color: #00a651;
+  --pill-background-color: transparent;
+  --pill-inline-padding: 0rem;
+  --pill-block-padding: 0rem;
+  --pill-border-radius: 0.25rem;
+  --pill-font-size: 0.8125em;
+  --pill-line-height: 0.9375em;
+
+  color: var(--pill-color);
+  background-color: var(--pill-background-color);
+  padding-inline: var(--pill-inline-padding);
+  padding-block: var(--pill-block-padding);
+  border-radius: var(--pill-border-radius);
+  font-size: var(--pill-font-size);
+  line-height: var(--pill-line-height);
+
+  font-weight: 500;
+  text-align: left;
+  text-decoration-line: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  -webkit-text-decoration-skip-ink: none;
+          text-decoration-skip-ink: none;
+  transition: all 0.3s ease-in-out;
+}
+a.boral-pill:hover {
+      text-decoration-color: transparent;
+    }

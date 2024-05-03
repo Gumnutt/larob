@@ -1,0 +1,14 @@
+{% set classes = [
+  'boral-pill',
+] %}
+{% set attributes = attributes.addClass(classes) %}
+
+{% if not link %}
+  <span {{attributes}} >{{ text }}</span>
+{% else %}
+  {% set attributes = attributes.setAttribute('href', link) %}
+  {% set attributes = attributes.setAttribute('role', 'link') %}
+  {% set attributes = attributes.setAttribute('aria-label',  "Go to the " ~ text|lower ~ " page") %}
+  <a {{attributes}} >{{text}}</a>
+{% endif %}
+

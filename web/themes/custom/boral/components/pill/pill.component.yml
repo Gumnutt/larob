@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json'
+name: pill
+status: stable
+description: Simple pill component
+props:
+  type: object
+  properties:
+    text:
+      required: true
+      type: string
+      title: title
+      description: Text to go inside the pill component
+    link:
+      required: false
+      type: string
+      title: title
+      description: Optional link if used as a taxonomy term

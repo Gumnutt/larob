@@ -112,7 +112,7 @@ export default ({ mode }) => {
         },
         styles: {
           filename: 'assets/pcss/spritemap.pcss',
-          lang: 'pcss',
+          lang: 'css',
         },
       }),
       twig({
