@@ -7,7 +7,7 @@ const config = {
     "@chromatic-com/storybook",
     "@storybook/addon-interactions",
     "@storybook/addon-styling-webpack",
-    "storybook-addon-root-attributes",
+    "@storybook/addon-viewport",
   ],
   framework: {
     name: "@storybook/html-vite",

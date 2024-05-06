@@ -52,8 +52,8 @@
     {{ page.alerts }}
   {% endif %}
 
-  <header role="banner" class="site-header bg-dark text-light py-2 py-sm-4">
-    <div class="container d-flex align-items-center gap-3">
+  <header role="banner" class="py-2 site-header bg-dark text-light py-sm-4">
+    <div class="container gap-3 d-flex align-items-center">
       {# Page logo #}
       <div class="me-auto">
         {{ page.header }}
@@ -113,13 +113,13 @@
         </div>
 
         {% if page.sidebar_first %}
-          <aside class="col-md-4 order-md-first mt-4 mt-mb-0" role="complementary">
+          <aside class="mt-4 col-md-4 order-md-first mt-mb-0" role="complementary">
             {{ page.sidebar_first }}
           </aside>
         {% endif %}
 
         {% if page.sidebar_second %}
-          <aside class="col-md-4 order-md-last mt-4 mt-mb-0" role="complementary">
+          <aside class="mt-4 col-md-4 order-md-last mt-mb-0" role="complementary">
             {{ page.sidebar_second }}
           </aside>
         {% endif %}
@@ -130,8 +130,8 @@
 
   {% if page.footer %}
     {% block footer %}
-      <footer role="contentinfo" class="site-footer bg-dark text-light py-3">
-        <div class="container d-flex align-items-center gap-3">
+      <footer role="contentinfo" class="py-3 site-footer bg-dark text-light">
+        <div class="container gap-3 d-flex align-items-center">
           {{ page.footer }}
         </div>
       </footer>
@@ -146,3 +146,4 @@
 
 
 {% include "boral:button" with {title: 'button'} %}
+{% include "boral:icon" with {name: 'arrow', source: 'material'} %}

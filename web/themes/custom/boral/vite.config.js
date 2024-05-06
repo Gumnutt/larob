@@ -107,7 +107,8 @@ export default ({ mode }) => {
       }),
       twig({
         namespaces: {
-          components: join(__dirname, "components"),
+          boral: join(__dirname, "components"),
+          pragma_misc: join(drupalPath, "web/modules/custom/pragma_misc/templates"),
         },
       }),
       liveReload(__dirname + "/**/*.(php|theme|twig|module)"),

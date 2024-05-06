@@ -1,0 +1,22 @@
+{% macro svg(options={}) %}
+
+  {% set availableFileTypes = {
+    "file-csv": "csv",
+    "file-xls": "xls",
+    "file-xlsx": "xls",
+    "file-pdf": "pdf",
+    "file-zip": "zip",
+    "file-docx": "docx",
+  } %}
+
+
+
+  {% set title = options.title ? options.title : options.icon %}
+  <svg class="icon icon--custom icon-{{options.icon}}" aria-hidden="true" role="img">
+      <title>{{options.title}}</title>
+      {% if options.desc %}
+          <desc>{{options.desc}}</desc>
+      {% endif %}
+      <use xlink:href="#icon-{{availableFileTypes[options.icon] ?? options.icon}}"></use>
+  </svg>
+{% endmacro %}

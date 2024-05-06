@@ -1,0 +1,5 @@
+name: "Pragma misc"
+type: module
+description: "Small updates that dont live in the theme"
+package: Pragma
+core_version_requirement: ^10

@@ -1,0 +1,20 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: icon
+status: stable
+description: Simple icon component
+props:
+  type: object
+  properties:
+    name:
+      required: true
+      type: string
+      title: Icon
+      description: The name of the icon
+    source:
+      required: true
+      type: string
+      title: Source
+      description: What si the source of this icon material or custom?
+      enum:
+        - material
+        - custom

@@ -14,6 +14,8 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@ljcl/storybook-addon-cssprops": "^4.0.0",
+    "@storybook/addon-viewport": "^8.0.9",
     "accessible-submenu": "^1.0.2",
     "glob": "^10.3.12",
     "hamburgers": "^1.2.1",
