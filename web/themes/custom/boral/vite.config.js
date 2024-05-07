@@ -12,6 +12,7 @@ import { viteExternalsPlugin } from "vite-plugin-externals"
 import postcssNesting from "postcss-nesting"
 import tailwindcss from "tailwindcss"
 import VitePluginSvgSpritemap from "@spiriit/vite-plugin-svg-spritemap"
+import { fileURLToPath } from "node:url"
 
 const { readFile, writeFile } = fs.promises
 
@@ -108,7 +109,6 @@ export default ({ mode }) => {
       twig({
         namespaces: {
           boral: join(__dirname, "components"),
-          pragma_misc: join(drupalPath, "web/modules/custom/pragma_misc/templates"),
         },
       }),
       liveReload(__dirname + "/**/*.(php|theme|twig|module)"),

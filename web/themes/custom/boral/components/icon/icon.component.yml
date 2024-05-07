@@ -18,3 +18,11 @@ props:
       enum:
         - material
         - custom
+    title:
+      type: string
+      title: Title
+      description: The title of the icon used for a11y purposes
+    desc:
+      type: string
+      title: Description
+      description: The description of the icon used for a11y purposes

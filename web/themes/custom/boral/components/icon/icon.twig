@@ -1,9 +1,13 @@
-{% import '@pragma_misc/macros/icon.html.twig' as icon %}
-
 {% if source is same as('material') %}
   <span class="material-symbols-outlined">{{ name }}</span>
 {% endif %}
 
 {% if source is same as('custom') %}
-  {{ icon.svg({icon: name, title: "Accordion icon", desc: "An icon descriptive of the accordions contents"}) }}
+  <svg class="icon icon--custom icon-{{name}}" aria-hidden="true" role="img">
+    <title>{{title}}</title>
+    {% if desc %}
+      <desc>{{desc}}</desc>
+    {% endif %}
+    <use xlink:href="#icon-{{name}}"></use>
+  </svg>
 {% endif %}

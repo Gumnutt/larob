@@ -16,10 +16,10 @@
       --button-block-padding: 0.75rem;
       --button-inline-padding: 1.5rem;
     }
-.boral-button[data-size="large"] {
-    --button-inline-padding: 1.875rem;
-    --button-block-padding: 1.125rem;
-  }
+.boral-button[data-size="large"]:not([data-variant="text"]) {
+      --button-inline-padding: 1.875rem;
+      --button-block-padding: 1.125rem;
+    }
 .boral-button[data-variant="primary"] {
     --button-color: var(--boral-navy);
     --button-background-color: #b8d861;

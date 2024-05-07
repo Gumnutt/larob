@@ -18,8 +18,10 @@
     }
   }
   &[data-size="large"] {
-    --button-inline-padding: 1.875rem;
-    --button-block-padding: 1.125rem;
+    &:not([data-variant="text"]) {
+      --button-inline-padding: 1.875rem;
+      --button-block-padding: 1.125rem;
+    }
   }
   &[data-variant="primary"] {
     --button-color: var(--boral-navy);
