@@ -1,5 +1,6 @@
 import Card from "./card.twig"
 import "./card.css"
+import "../button/button.css"
 
 export default {
   title: "Components/Card",

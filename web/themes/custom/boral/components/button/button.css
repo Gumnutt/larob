@@ -1,16 +1,43 @@
+@property --gradient-stop-pos-1 {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+@property --gradient-stop-pos-2 {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --gradient-stop-1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000;
+}
+@property --gradient-stop-2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000;
+}
 .boral-button {
   --button-color: #000;
-  --button-background-color: transparent;
+  --button-background: transparent;
   --button-inline-padding: 0rem;
   --button-block-padding: 0rem;
   --border-radius: 0.25rem;
   --button-gap: 0.875rem;
+
+  --gradient-stop-1: var(--boral-green);
+  --gradient-stop-2: var(--boral-green);
+  --gradient-stop-pos-1: 0%;
+  --gradient-stop-pos-2: 100%;
+  --background-gradient: linear-gradient(90deg, var(--gradient-stop-1) var(--gradient-stop-pos-1), var(--gradient-stop-2) var(--gradient-stop-pos-2));
+
   display: inline-flex;
   align-items: center;
   padding-block: var(--button-block-padding);
   padding-inline: var(--button-inline-padding);
   border-radius: var(--border-radius);
-  background-color: var(--button-background-color);
+  background: var(--button-background);
   cursor: pointer;
   color: var(--button-color);
   gap: var(--button-gap);
@@ -25,11 +52,24 @@
     }
 .boral-button[data-variant="primary"] {
     --button-color: var(--boral-navy);
-    --button-background-color: #b8d861;
+    --button-background: var(--background-gradient);
+    --gradient-stop-pos-2: 53.5%;
+    transition:
+      --gradient-stop-1 300ms cubic-bezier(0.19, 1, 0.22, 1),
+      --gradient-stop-pos-1 300ms cubic-bezier(0.19, 1, 0.22, 1),
+      --gradient-stop-pos-2 300ms cubic-bezier(0.19, 1, 0.22, 1);
   }
+.boral-button[data-variant="primary"]:hover {
+      --gradient-stop-1: var(--boral-lime-80);
+      --gradient-stop-pos-1: 11.5%;
+    }
+.boral-button[data-variant="primary"]:active {
+      --gradient-stop-pos-1: 33%;
+      --gradient-stop-pos-2: 100%;
+    }
 .boral-button[data-variant="secondary"] {
     --button-color: #fff;
-    --button-background-color: #00a94f;
+    --button-background: #00a94f;
   }
 .boral-button[data-icon-position="left"] {
     flex-direction: row-reverse;
