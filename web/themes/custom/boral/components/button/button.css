@@ -18,13 +18,19 @@
   inherits: false;
   initial-value: #000;
 }
+@property --button-color {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #000;
+}
 .boral-button {
-  --button-color: #000;
+  --button-color: var(--boral-navy);
   --button-background: transparent;
   --button-inline-padding: 0rem;
   --button-block-padding: 0rem;
   --border-radius: 0.25rem;
   --button-gap: 0.875rem;
+  --button-text-weight: 400;
 
   --gradient-stop-1: var(--boral-green);
   --gradient-stop-2: var(--boral-green);
@@ -41,6 +47,7 @@
   cursor: pointer;
   color: var(--button-color);
   gap: var(--button-gap);
+  font-weight: var(--button-text-weight);
 }
 .boral-button[data-size="small"]:not([data-variant="text"]) {
       --button-block-padding: 0.75rem;
@@ -52,6 +59,7 @@
     }
 .boral-button[data-variant="primary"] {
     --button-color: var(--boral-navy);
+    --button-text-weight: 600;
     --button-background: var(--background-gradient);
     --gradient-stop-pos-2: 53.5%;
     transition:
@@ -68,9 +76,15 @@
       --gradient-stop-pos-2: 100%;
     }
 .boral-button[data-variant="secondary"] {
-    --button-color: #fff;
-    --button-background: #00a94f;
+    --button-color: var(--boral-navy);
+    --button-background: var(--boral-lime-80);
   }
+.boral-button[data-variant="text"] {
+    transition: --button-color 300ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+.boral-button[data-variant="text"]:hover {
+      --button-color: var(--boral-green);
+    }
 .boral-button[data-icon-position="left"] {
     flex-direction: row-reverse;
   }

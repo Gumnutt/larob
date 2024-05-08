@@ -25,40 +25,51 @@
       {% set img_src = media %}
       {% set img_classes = ['card--image'] %}
       {% set img_attributes = create_attribute().setAttribute('src', img_src) %}
-      <img {{ img_attributes.addClass(img_classes) }}>
-    {% endif %}
-
-    {% if tags %}
-      <div class="card--tags">
-        {% for tag in tags %}
-          <span class="tag">{{ tag }}</span>
-        {% endfor %}
+      <div class="image-wrapper">
+        <img {{ img_attributes.addClass(img_classes) }}>
       </div>
     {% endif %}
     
+    <div class="card--content">
+      {% block card_body %}
+        {% if tags %}
+          <div class="card--tags">
+            {% for tag in tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        {% if title %}
+          {%
+            include 'boral:heading' with {
+              heading_html_tag: title_tag,
+              content: title,
+              heading_attributes: title_attributes,
+              heading_utility_classes: title_classes
+            }
+          %}
+        {% endif %}
 
-    {% if title %}
-      {%
-        include 'boral:heading' with {
-          heading_html_tag: title_tag,
-          content: title,
-          heading_attributes: title_attributes,
-          heading_utility_classes: title_classes
-        }
-      %}
-    {% endif %}
-    {% block card_body %}
-      
-    {% endblock %}
+        {% if body %}
+          <article>
+            {{ body }}
+          </article>
+        {% endif %}
 
-    {% include "boral:button" with {
-      text: button_text|default('Read more'),
-      variant: button_variant,
-      size: button_size,
-      icon: button_icon,
-      icon_position: button_icon_position,
-      attributes: button_attributes,
-    } %}
+      {% endblock %}
+    </div>
+
+    <div class="card--footer">
+      {% include "boral:button" with {
+        text: button_text|default('Read more'),
+        variant: button_variant,
+        size: button_size,
+        icon: button_icon,
+        icon_position: button_icon_position,
+        attributes: button_attributes,
+      } %}
+    </div>
   </div>
 
 {% endapply %}

@@ -24,7 +24,6 @@ props:
         - h4
         - h5
         - h6
-
     tags:
       type: ["array", "null"]
       title: List of tags
@@ -33,6 +32,9 @@ props:
       type: ["object", "null"]
       title: Media
       description: The media for the card
+    body:
+      type: string
+      title: Card Body
     # button props
     button_text:
       type: string

@@ -16,6 +16,9 @@ export default {
       controls: { type: "select" },
       options: ["h1", "h2", "h3", "h4", "h5", "h6"],
     },
+    body: {
+      controls: { type: "text" },
+    },
     tags: {
       controls: { type: "object" },
     },
@@ -59,7 +62,16 @@ export const Basic = {
     variant: "basic",
     title: "Card Title",
     title_tag: "h3",
+    body: "Lorem ispum dolor sit amet consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.",
     tags: ["Tag 1", "Tag 2"],
     media: "https://via.placeholder.com/150",
+    button_text: "Read More",
+    button_variant: "primary",
+    button_size: "small",
+    button_filled: true,
+    button_rounded: false,
+    button_icon: "arrow_forward",
+    button_icon_position: "right",
+    button_link: "#",
   },
 }

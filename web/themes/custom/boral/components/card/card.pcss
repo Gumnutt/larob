@@ -1,0 +1,26 @@
+.card {
+  --card-padding: 0px;
+  --content-width: 100%;
+  .card--content,
+  .card--footer {
+    max-width: 685px;
+    padding-inline: var(--card-padding);
+  }
+  .image-wrapper {
+    max-width: calc(var(--content-width) + (var(--card-padding) * 2));
+    width: 100%;
+    aspect-ratio: 7/4;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &[data-variant="basic"] {
+    --card-padding: 12px;
+    --content-width: 685px;
+    .card--footer {
+      margin-top: 12px;
+    }
+  }
+}
