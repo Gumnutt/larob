@@ -102,4 +102,19 @@
       }
     }
   }
+  &[data-alignment="center"] {
+    justify-self: center;
+  }
+  &[data-alignment="right"] {
+    justify-self: flex-end;
+  }
+  &[data-alignment="left"] {
+    justify-self: flex-start;
+  }
+  &[data-alignment="stretch"] {
+    justify-self: stretch;
+  }
+  &[data-rounded="true"] {
+    border-radius: 9999px;
+  }
 }

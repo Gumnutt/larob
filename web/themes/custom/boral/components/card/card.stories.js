@@ -53,6 +53,10 @@ export default {
     button_link: {
       control: { type: "text" },
     },
+    button_alignment: {
+      control: { type: "select" },
+      options: ["left", "center", "right"],
+    },
   },
   component: Card,
 }
@@ -60,7 +64,7 @@ export default {
 export const Basic = {
   args: {
     variant: "basic",
-    title: "Card Title",
+    title: "Article heading here lorem ipsum dolor et al",
     title_tag: "h3",
     body: "Lorem ispum dolor sit amet consectetur adipiscing elit. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum.",
     tags: ["Tag 1", "Tag 2"],
@@ -73,5 +77,26 @@ export const Basic = {
     button_icon: "arrow_forward",
     button_icon_position: "right",
     button_link: "#",
+    button_alignment: "right",
+  },
+}
+
+export const Row = {
+  args: {
+    variant: "row",
+    title: "Article heading here lorem ipsum dolor et al ultricies quam scelerisque",
+    title_tag: "h3",
+    body: "Article heading here lorem ipsum dolor et a. Sed non turpis massa. Donec malesuada vulputate massa a dapibus. Nam id lacus congue, porta magna quis, eleifend justo. Proin ultricies scelerisque luctus. Vestibulum in quam vitae eros ultrices blandit non vitae orci. Vestibulum cursus varius ligula, ac ullamcorper nisl. Nunc quam risus, viverra vitae molestie.",
+    tags: ["Tag 1", "Tag 2"],
+    media: "https://via.placeholder.com/150",
+    button_text: "Read More",
+    button_variant: "primary",
+    button_size: "small",
+    button_filled: true,
+    button_rounded: true,
+    button_icon: "arrow_forward",
+    button_icon_position: "right",
+    button_link: "#",
+    button_alignment: "right",
   },
 }

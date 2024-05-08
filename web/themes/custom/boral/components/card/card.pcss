@@ -1,10 +1,15 @@
 .card {
   --card-padding: 0px;
   --content-width: 100%;
-  .card--content,
-  .card--footer {
-    max-width: 685px;
+  .card--content {
+    max-width: var(--content-width);
     padding-inline: var(--card-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+  .card--footer {
+    display: grid;
   }
   .image-wrapper {
     max-width: calc(var(--content-width) + (var(--card-padding) * 2));
@@ -19,8 +24,22 @@
   &[data-variant="basic"] {
     --card-padding: 12px;
     --content-width: 685px;
-    .card--footer {
-      margin-top: 12px;
+    .image-wrapper {
+      margin-bottom: 1.25rem;
+    }
+  }
+  &[data-variant="row"] {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    --content-width: 100%;
+    .image-wrapper {
+      max-width: 368px;
+      height: 100%;
+      aspect-ratio: unset;
+    }
+    .card--content {
+      padding-block: 1.25rem;
     }
   }
 }

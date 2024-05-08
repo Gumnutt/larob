@@ -79,6 +79,13 @@ props:
       enum:
         - small
         - large
+    button_alignment:
+      type: string
+      title: Button alignmwnt
+      enum:
+        - left
+        - center
+        - right
 
 slots:
   content:

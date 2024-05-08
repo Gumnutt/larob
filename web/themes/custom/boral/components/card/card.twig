@@ -57,19 +57,23 @@
           </article>
         {% endif %}
 
+        <div class="card--footer">
+          {% include "boral:button" with {
+            text: button_text|default('Read more'),
+            variant: button_variant,
+            size: button_size,
+            icon: button_icon,
+            icon_position: button_icon_position,
+            attributes: button_attributes,
+            alignment: button_alignment,
+            rounded: button_rounded,
+          } %}
+        </div>
+
       {% endblock %}
     </div>
 
-    <div class="card--footer">
-      {% include "boral:button" with {
-        text: button_text|default('Read more'),
-        variant: button_variant,
-        size: button_size,
-        icon: button_icon,
-        icon_position: button_icon_position,
-        attributes: button_attributes,
-      } %}
-    </div>
+    
   </div>
 
 {% endapply %}

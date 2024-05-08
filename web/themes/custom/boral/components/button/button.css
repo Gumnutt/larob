@@ -95,3 +95,18 @@
 .boral-button[data-icon="true"]:hover .icon {
         translate: 0.25rem;
       }
+.boral-button[data-alignment="center"] {
+    justify-self: center;
+  }
+.boral-button[data-alignment="right"] {
+    justify-self: flex-end;
+  }
+.boral-button[data-alignment="left"] {
+    justify-self: flex-start;
+  }
+.boral-button[data-alignment="stretch"] {
+    justify-self: stretch;
+  }
+.boral-button[data-rounded="true"] {
+    border-radius: 9999px;
+  }

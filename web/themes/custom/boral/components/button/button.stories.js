@@ -33,6 +33,10 @@ export default {
     link: {
       control: { type: "text" },
     },
+    alignment: {
+      control: { type: "select" },
+      options: ["left", "center", "right"],
+    },
   },
   component: Button,
 }

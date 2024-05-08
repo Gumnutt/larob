@@ -50,3 +50,10 @@ props:
       enum:
         - small
         - large
+    alignment:
+      type: string
+      title: Button alignmwnt
+      enum:
+        - left
+        - center
+        - right

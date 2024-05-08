@@ -3,26 +3,33 @@
   --heading-1-size: 4.875rem;
   --heading-1-leading: 106%;
   --heading-1-weight: 600;
+  --heading-1-margin-block: 1em;
 
   --heading-2-size: 3.4375rem;
   --heading-2-leading: 109%;
   --heading-2-weight: 600;
+  --heading-2-margin-block: 1em;
 
   --heading-3-size: 1.875rem;
   --heading-3-leading: normal;
   --heading-3-weight: 600;
+  --heading-3-margin-block: 1em;
 
   --heading-4-size: 1.875rem;
   --heading-4-leading: normal;
   --heading-4-weight: 400;
+  --heading-4-margin-block: 1em;
 
   --heading-5-size: 1.5rem;
   --heading-5-leading: normal;
   --heading-5-weight: 600;
+  --heading-5-margin-block: 1em;
 
   /* Body */
   --paragraph-size: 1.125rem;
   --paragraph-leading: normal;
+  --paragraph-weight: 400;
+  --paragraph-margin-block: 1em;
 }
 
 html,
@@ -34,33 +41,39 @@ h1 {
   font-size: var(--heading-1-size);
   font-weight: var(--heading-1-weight);
   line-height: var(--heading-1-leading);
+  margin-block: var(--heading-1-margin-block);
 }
 
 h2 {
   font-size: var(--heading-2-size);
   font-weight: var(--heading-2-weight);
   line-height: var(--heading-2-leading);
+  margin-block: var(--heading-2-margin-block);
 }
 
 h3 {
   font-size: var(--heading-3-size);
   font-weight: var(--heading-3-weight);
   line-height: var(--heading-3-leading);
+  margin-block: var(--heading-3-margin-block);
 }
 
 h4 {
   font-size: var(--heading-4-size);
   font-weight: var(--heading-4-weight);
   line-height: var(--heading-4-leading);
+  margin-block: var(--heading-4-margin-block);
 }
 
 h5 {
   font-size: var(--heading-5-size);
   font-weight: var(--heading-5-weight);
   line-height: var(--heading-5-leading);
+  margin-block: var(--heading-5-margin-block);
 }
 
 p {
   font-size: var(--paragraph-size);
   line-height: var(--paragraph-leading);
+  margin-block: var(--paragraph-margin-block);
 }
