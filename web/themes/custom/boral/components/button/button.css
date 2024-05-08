@@ -24,7 +24,7 @@
   initial-value: #000;
 }
 .boral-button {
-  --button-color: var(--boral-navy);
+  --button-color: #000;
   --button-background: transparent;
   --button-inline-padding: 0rem;
   --button-block-padding: 0rem;
@@ -58,7 +58,6 @@
       --button-block-padding: 1.125rem;
     }
 .boral-button[data-variant="primary"] {
-    --button-color: var(--boral-navy);
     --button-text-weight: 600;
     --button-background: var(--background-gradient);
     --gradient-stop-pos-2: 53.5%;
@@ -76,7 +75,6 @@
       --gradient-stop-pos-2: 100%;
     }
 .boral-button[data-variant="secondary"] {
-    --button-color: var(--boral-navy);
     --button-background: var(--boral-lime-80);
   }
 .boral-button[data-variant="text"] {
