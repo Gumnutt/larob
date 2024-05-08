@@ -1,0 +1,64 @@
+{% apply spaceless %}
+
+  {% set card_attributes = create_attribute() %}
+
+  {% set custom_attributes = {
+    'data-variant': variant,
+  } %}
+  
+  {% for key, value in custom_attributes %}
+    {% if value %}
+      {% do card_attributes.setAttribute(key, value) %}
+    {% endif %}
+  {% endfor %}
+
+  {% set title_tag = card_title_tag|default('h3') %}
+
+  {%
+    set card_classes = [
+      'card',
+    ]
+  %}
+
+  <div {{ card_attributes.addClass(card_classes) }}>
+    {% if media|render %}
+      {% set img_src = media %}
+      {% set img_classes = ['card--image'] %}
+      {% set img_attributes = create_attribute().setAttribute('src', img_src) %}
+      <img {{ img_attributes.addClass(img_classes) }}>
+    {% endif %}
+
+    {% if tags %}
+      <div class="card--tags">
+        {% for tag in tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+    
+
+    {% if title %}
+      {%
+        include 'boral:heading' with {
+          heading_html_tag: title_tag,
+          content: title,
+          heading_attributes: title_attributes,
+          heading_utility_classes: title_classes
+        }
+      %}
+    {% endif %}
+    {% block card_body %}
+      
+    {% endblock %}
+
+    {% include "boral:button" with {
+      text: button_text|default('Read more'),
+      variant: button_variant,
+      size: button_size,
+      icon: button_icon,
+      icon_position: button_icon_position,
+      attributes: button_attributes,
+    } %}
+  </div>
+
+{% endapply %}

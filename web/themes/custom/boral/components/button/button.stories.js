@@ -24,7 +24,7 @@ export default {
     },
     icon: {
       control: { type: "select" },
-      options: ["none", "arrow", "hex"],
+      options: ["search", "arrow_forward", "arrow_back", "menu", "close"],
     },
     icon_position: {
       control: { type: "select" },
@@ -43,7 +43,7 @@ export const Primary = {
     variant: "primary",
     size: "small",
     style: "bordered",
-    icon: "none",
+    icon: "",
     filled: true,
     rounded: false,
     link: "#",
@@ -56,20 +56,7 @@ export const Secondary = {
     variant: "secondary",
     size: "small",
     style: "bordered",
-    icon: "none",
-    filled: true,
-    rounded: false,
-    link: "#",
-  },
-}
-
-export const tertiary = {
-  args: {
-    text: "Click me",
-    variant: "primary",
-    size: "small",
-    style: "bordered",
-    icon: "none",
+    icon: "",
     filled: true,
     rounded: false,
     link: "#",
@@ -82,7 +69,20 @@ export const text = {
     variant: "text",
     size: "small",
     style: "bordered",
-    icon: "none",
+    icon: "",
+    filled: true,
+    rounded: false,
+    link: "#",
+  },
+}
+
+export const withIcon = {
+  args: {
+    text: "Click me",
+    variant: "primary",
+    size: "small",
+    style: "bordered",
+    icon: "search",
     filled: true,
     rounded: false,
     link: "#",

@@ -1,0 +1,40 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Heading
+status: experimental
+description: "All HTML headings, `<h1>` through `<h6>`, are available."
+props:
+  type: object
+  properties:
+    heading_html_tag:
+      type: string
+      title: HTML tag
+      description: HTML header tag (h1, h2, h3, h4, h5, h6)
+      default: h1
+      enum:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+    heading_classes:
+      type: array
+      items:
+        type: string
+      title: Classes
+      default: []
+      description: An array of classes to add to the heading, merges display and heading utility classes.
+    title_link:
+      type: ["string", "boolean"]
+      title: Title Link
+      description: Link URL for the title.
+    heading_attributes:
+      type: Drupal\Core\Template\Attribute
+    content:
+      type: string
+      title: Content
+      description: Content text for the heading.
+slots:
+  heading_content:
+    title: Content
+    description: Content text for the heading.

@@ -1,0 +1,85 @@
+"$schema": "https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json"
+name: card
+status: stable
+description: Card component
+props:
+  type: object
+  properties:
+    variant:
+      type: string
+      title: Variant
+      description: How do you want this component displayed?
+    title:
+      type: string
+      title: Title
+      description: The title of the card
+    title_tag:
+      type: string
+      title: Card Title HTML Tag
+      default: h3
+      enum:
+        - h1
+        - h2
+        - h3
+        - h4
+        - h5
+        - h6
+
+    tags:
+      type: ["array", "null"]
+      title: List of tags
+      description: A list of tags to display
+    media:
+      type: ["object", "null"]
+      title: Media
+      description: The media for the card
+    # button props
+    button_text:
+      type: string
+      title: text
+      description: the buttons text
+      examples: []
+    button_variant:
+      type: string
+      title: Type
+      description: variant (primary, secondary, tertiary, ...)
+      examples: []
+      enum:
+        - primary
+        - secondary
+        - tertiary
+        - text
+    button_solid:
+      type: boolean
+      title: Solid
+      description: is the button solid
+    button_rounded:
+      type: boolean
+      title: Rounded
+      description: is the button rounded
+    button_icon:
+      type: string
+      title: Icon
+      description: Icon to display
+    button_icon_position:
+      type: string
+      title: Icon position
+      description: Is the icon on the left or the right of the button?
+      enum:
+        - left
+        - right
+    button_link:
+      type: string
+      title: Link
+    button_size:
+      type: string
+      title: Size
+      enum:
+        - small
+        - large
+
+slots:
+  content:
+    title: Content
+    required: true
+    description: The card content.

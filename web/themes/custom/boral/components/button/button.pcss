@@ -4,13 +4,16 @@
   --button-inline-padding: 0rem;
   --button-block-padding: 0rem;
   --border-radius: 0.25rem;
-
-  padding-inline: var(--button-inline-padding);
-  padding-block: var(--button-block-padding);
-  color: var(--button-color);
-  background-color: var(--button-background-color);
-  border-radius: var(--border-radius);
+  --button-gap: 0.875rem;
   display: inline-flex;
+  align-items: center;
+  padding-block: var(--button-block-padding);
+  padding-inline: var(--button-inline-padding);
+  border-radius: var(--border-radius);
+  background-color: var(--button-background-color);
+  cursor: pointer;
+  color: var(--button-color);
+  gap: var(--button-gap);
   &[data-size="small"] {
     &:not([data-variant="text"]) {
       --button-block-padding: 0.75rem;
@@ -31,6 +34,20 @@
     --button-color: #fff;
     --button-background-color: #00a94f;
   }
-  &[data-variant="text"] {
+  &[data-icon-position="left"] {
+    flex-direction: row-reverse;
+  }
+  &[data-icon="true"] {
+    .icon {
+      transition: translate 300ms cubic-bezier(0.19, 1, 0.22, 1);
+      font-size: 1.25em;
+      font-variation-settings: "wght" 400;
+      will-change: translate;
+    }
+    &:hover {
+      .icon {
+        translate: 0.25rem;
+      }
+    }
   }
 }

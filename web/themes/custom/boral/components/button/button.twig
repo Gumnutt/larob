@@ -2,22 +2,28 @@
   'boral-button',
 ] %}
 
+{% set button_attributes = create_attribute() %}
+
 {% set custom_attributes = {
   'data-variant': variant,
   'data-size': size,
   'data-icon-position': icon_position,
+  'data-icon': icon ? true : false,
 } %}
  
 {% for key, value in custom_attributes %}
-  {% do attributes.setAttribute(key, value) %}
+  {% do button_attributes.setAttribute(key, value) %}
 {% endfor %}
 
-{% set attributes = attributes.addClass(classes) %}
+{% set button_attributes = button_attributes.addClass(classes) %}
 
-{# {% import '@boral/macros/icon.html.twig' as icon %}
-{% set display_icon = selectedIcon ? icon.svg({icon: paragraph._heading_icon.value|raw, title: "Accordion icon", desc: "An icon descriptive of the accordions contents"}) : null %} #}
-
-<a {{attributes}} type="button">
+<a {{button_attributes}} type="button">
   {{ text }}
-  {# {{ icon }} #}
+  {% if icon  %}
+    {% include 'boral:icon' with {
+      source: 'material',
+      name: icon,
+    } %}
+  {% endif %}
+  
 </a>
